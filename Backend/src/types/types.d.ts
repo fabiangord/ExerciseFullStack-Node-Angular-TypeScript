@@ -1,0 +1,1 @@
+export type SpecialtyType = 'Medicina General' | 'Cardiología' | 'Medicina Interna' | 'Dermatología' | 'Rehabilitación Fisica' | 'Psicología' | 'Odontología' | 'Radiología'
