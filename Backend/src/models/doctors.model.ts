@@ -1,5 +1,5 @@
 import { Prop, getModelForClass } from "@typegoose/typegoose"
-import { SpecialtyType } from "../types/types"
+import { SpecialtyType } from "../utils/enums"
 
 class Doctors{
     @Prop({
@@ -34,6 +34,7 @@ class Doctors{
         required:true,
         type: String,
         trim:true,
+        lowercase: true
     })
     private email!:string
 }

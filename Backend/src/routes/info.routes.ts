@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { doctors, medicalAppointment, patients } from '../controllers/info.controllers'
+import { doctors, medicalAppointment, patients } from '../controllers/infoPost.controllers'
 
 const router = Router()
 
