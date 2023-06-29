@@ -8,7 +8,7 @@ export const doctorsGet = async (req: Request, res: Response) => {
         const doctors = await modelDoctors.find()
         res.json(doctors)
     } catch (error) {
-        console.error(error)
+        res.status(400).json(error)
     }
 }
 
@@ -17,7 +17,7 @@ export const medicalAppointmentGet = async (req: Request, res: Response) => {
         const medicalAppointment = await modelMedicalAppointment.find()
         res.json(medicalAppointment)
     } catch (error) {
-        console.error(error)
+        res.status(400).json(error)
     }
 }
 
@@ -26,6 +26,6 @@ export const patientsGet = async (req: Request, res: Response) => {
         const patients = await modelPatients.find()
         res.json(patients)
     } catch (error) {
-        console.error(error)
+        res.status(400).json(error)
     }
 }

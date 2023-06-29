@@ -17,7 +17,7 @@ export const doctors = async (req: Request, res: Response) => {
     res.json(doctorSaved)
     
   } catch (error) {
-    res.status(400).json(error)
+    res.status(400).json({error: error})
   }
 }
 
@@ -32,7 +32,7 @@ export const medicalAppointment = async (req: Request, res: Response) => {
     res.json(medicalAppointmentSaved)
 
   } catch (error) {
-    res.status(400).json(error)
+    res.status(400).json({error: error})
   }
 }
 
@@ -48,6 +48,6 @@ export const patients = async (req: Request, res: Response) => {
     res.json(patientSaved)
     
   } catch (error) {
-    res.status(400).json(error)
+    res.status(400).json({error: error})
   }
 }
