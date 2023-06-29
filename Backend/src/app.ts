@@ -1,7 +1,7 @@
 import express from 'express'
 import routesInfo from './routes/info.routes'
 import 'dotenv/config'
-import './db'
+import './db' 
 
 const app = express()
 const PORT = process.env.PORT
