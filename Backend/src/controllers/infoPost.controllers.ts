@@ -1,13 +1,11 @@
 import { Request, Response } from 'express'
 import modelDoctors from '../models/doctors.model'
-import { createDoctor, createMedicalAppointment, createPatient } from '../utils/parsed'
+import { createDoctor, createMedicalAppointment, createPatient, parsedError } from '../utils/parsed'
 import modelPatients from '../models/patients.model'
 import modelMedicalAppointment from '../models/medicalAppointment.model'
 
 export const doctors = async (req: Request, res: Response) => {
-
   try {
-
     const newUserCreate = createDoctor(req.body)
 
     const newDoctor = new modelDoctors(newUserCreate)
@@ -15,10 +13,10 @@ export const doctors = async (req: Request, res: Response) => {
     const doctorSaved = await newDoctor.save()
 
     res.json(doctorSaved)
-    
-  } catch (error) {
-    res.status(400).json({error: error})
-  }
+  } catch (error: any) {
+    const errorMessage = parsedError(error)
+    res.status(400).send(errorMessage)
+ }
 }
 
 export const medicalAppointment = async (req: Request, res: Response) => {
@@ -30,15 +28,14 @@ export const medicalAppointment = async (req: Request, res: Response) => {
     const medicalAppointmentSaved = await newMedicalAppointment.save()
 
     res.json(medicalAppointmentSaved)
-
-  } catch (error) {
-    res.status(400).json({error: error})
-  }
+  } catch (error: any) {
+    const errorMessage = parsedError(error)
+    res.status(400).send(errorMessage)
+ }
 }
 
 export const patients = async (req: Request, res: Response) => {
   try {
-
     const newPatientCreate = createPatient(req.body)
 
     const newPatient = new modelPatients(newPatientCreate)
@@ -46,8 +43,8 @@ export const patients = async (req: Request, res: Response) => {
     const patientSaved = await newPatient.save()
 
     res.json(patientSaved)
-    
-  } catch (error) {
-    res.status(400).json({error: error})
-  }
+  } catch (error: any) {
+    const errorMessage = parsedError(error)
+    res.status(400).send(errorMessage)
+ }
 }
