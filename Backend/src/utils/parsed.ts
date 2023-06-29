@@ -20,7 +20,7 @@ const isNumber = (number:any): boolean =>{
 
 const parsedInfo = (infoFromRequest: any): string =>{
     if(!isString(infoFromRequest)){
-        throw new Error('Formato de nombre no valido')
+        throw new Error('Formato de info no valido')
     }
 
     return infoFromRequest

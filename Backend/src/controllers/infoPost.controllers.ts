@@ -21,19 +21,18 @@ export const doctors = async (req: Request, res: Response) => {
   }
 }
 
-export const medicalAppointment = (req: Request, res: Response) => {
+export const medicalAppointment = async (req: Request, res: Response) => {
   try {
-    
     const newMedicalAppointmentCreate = createMedicalAppointment(req.body)
 
     const newMedicalAppointment = new modelMedicalAppointment(newMedicalAppointmentCreate)
 
-    const medicalAppointmentSaved = newMedicalAppointment.save()
+    const medicalAppointmentSaved = await newMedicalAppointment.save()
 
-    res.json(medicalAppointment)
+    res.json(medicalAppointmentSaved)
 
   } catch (error) {
-    console.log(error)
+    res.status(400).json(error)
   }
 }
 

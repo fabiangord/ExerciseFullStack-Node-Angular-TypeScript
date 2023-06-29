@@ -11,7 +11,7 @@ class MedicalAppointment {
 
     @Prop({
         required:true,
-        type: SpecialtyType,
+        type: Object,
         trim: true
     })
     private specialty!: SpecialtyType
