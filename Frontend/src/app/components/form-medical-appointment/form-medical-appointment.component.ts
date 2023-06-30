@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiResponse, Especialidad, FormDataDoctorsInterface } from 'src/app/types/types';
-import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { FormDataDoctorsInterface, FormDataMedicalAppointmentInterface } from 'src/app/types/types';
 import { ApiServicesService } from 'src/app/services/api-services.service';
 @Component({
   selector: 'app-form-medical-appointment',
@@ -9,20 +8,37 @@ import { ApiServicesService } from 'src/app/services/api-services.service';
 })
 export class FormMedicalAppointmentComponent{
 
-  doctor!: FormDataDoctorsInterface[]
-  specialty!:string
-  specialtys: string[] = [
-    'Medicina General' , 'Cardiología' , 'Medicina Interna' , 'Dermatología' , 'Rehabilitación Física' , 'Psicología' , 'Odontología' , 'Radiología'
-  ]
+  formDataMedicalAppointment: FormDataMedicalAppointmentInterface = {
+    documentNumberPatient: '',
+    specialty: '',
+    doctorName: '',
+    patientName: ''
+  }
+  doctors!: FormDataDoctorsInterface[] 
+
+ 
 
   constructor(private apiService: ApiServicesService){}
 
-  obtenerEspe(){
-    this.apiService.getDoctoresPorEspecialidad(this.specialty)
+  saveInformationMedicalAppointment(){
+    this.apiService.saveInfo(this.formDataMedicalAppointment, 'medicalAppointment')
+      .subscribe(
+        (data: any) => {
+          location.reload()
+          console.log(`Info enviada a la base de datos ${data}`)
+        },
+        (error)=>{
+          console.error(`${error}`);
+        }
+      )
+  }
+
+  getSpecialty(){
+    this.apiService.getDoctorsForSpecialty(this.formDataMedicalAppointment.specialty)
         .subscribe(
           (data: any) => { 
             const formData = data as FormDataDoctorsInterface[]
-            this.doctor = formData
+            this.doctors = formData
           },
           (error) => {
             console.log(error);

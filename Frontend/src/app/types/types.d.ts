@@ -14,12 +14,15 @@ export interface FormDataPatientsInterface {
     phone: string
 }
 
-export type Especialidad = 'Medicina General' | 'Cardiología' | 'Medicina Interna' | 'Dermatología' | 'Rehabilitación Física' | 'Psicología' | 'Odontología' | 'Radiología'
+export interface FormDataMedicalAppointmentInterface {
+    documentNumberPatient: string
+    specialty: string
+    doctorName: string
+    patientName: string
+}
+
+export type SpecialtyType = 'Medicina General' | 'Cardiología' | 'Medicina Interna' | 'Dermatología' | 'Rehabilitación Física' | 'Psicología' | 'Odontología' | 'Radiología' 
 
 export interface ApiResponse {
     doctores: FormDataDoctorsInterface[];
-}
-
-export interface ChangeEvent {
-    target: HTMLSelectElement;
 }

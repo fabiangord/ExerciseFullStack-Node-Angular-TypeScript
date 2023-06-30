@@ -10,11 +10,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr >
-            <td>1111111</td>
-            <td>Odontología</td>
-            <td>Fabian</td>
-            <td>Andres</td>
+          <tr *ngFor="let patient of dataPatient">
+            <td>{{patient.documentNumberPatient}}</td>
+            <td>{{patient.specialty}}</td>
+            <td>{{patient.doctorName}}</td>
+            <td>{{patient.patientName}}</td>
           </tr>
         </tbody>
     </table>
