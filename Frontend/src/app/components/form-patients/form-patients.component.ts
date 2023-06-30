@@ -22,9 +22,10 @@ export class FormPatientsComponent {
   saveInformationPatients(){
     this.apiServices.saveInfo(this.formDataPatients, 'patients')
       .subscribe(
-        (data: any) => {
+        (data: Object) => {
+          const formData = data as FormDataPatientsInterface
           location.reload()
-          console.log(`Información enviada ${data}`);
+          console.log(`Información enviada ${formData}`);
         },
         (error) => {
           console.log(`Información no enviada ${error}`);

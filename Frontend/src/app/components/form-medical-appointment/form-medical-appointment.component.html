@@ -2,20 +2,11 @@
     <form>
         <h1>Formulario Citas Medicas</h1>
         <input type="text" placeholder="Ingrese N° Documento Paciente">
-        <select>
-            <option disabled selected value="">Selecciona una opción...</option>
-            <option value="Medicina General">Medicina General</option>
-            <option value="Cardiología">Cardiología</option>
-            <option value="Medicina Interna">Medicina Interna</option>
-            <option value="Dermatología">Dermatología</option>
-            <option value="Rehabilitación Física">Rehabilitación Fisica</option>
-            <option value="Psicología">Psicología</option>
-            <option value="Psicología">Odontología</option>
-            <option value="Radiología">Radiología</option>
+        <select [(ngModel)]="specialty" name="specialty" (change)="obtenerEspe()">
+            <option *ngFor="let specialty of specialtys" [value]="specialty">{{ specialty}}</option>
         </select>
-        <select>
-            <option disabled selected value="">Selecciona una opción...</option>
-            <option value="Nombre Doctor">Andres</option>
+        <select id="doctor" [(ngModel)]="doctor" name="doctor">
+            <option *ngFor="let doctor of doctor" [value]="doctor.specialty">{{ doctor.name }}</option>
         </select>
         <input type="text" placeholder="Ingrese nombre del paciente">
         <button>Enviar</button>
