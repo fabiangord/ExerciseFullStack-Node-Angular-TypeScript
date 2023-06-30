@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { doctors, medicalAppointment, patients } from '../controllers/infoPost.controllers'
-import { doctorsGet, medicalAppointmentGet, patientsGet } from '../controllers/infoGet.controllers'
+import { doctorsGet, medicalAppointmentGet, patientsGet, specialtyGet } from '../controllers/infoGet.controllers'
 
 const router = Router()
 
@@ -14,6 +14,8 @@ router.get('/medicalAppointment', medicalAppointmentGet)
 
 router.post('/patients', patients)
 
-router.get('/Patients', patientsGet)
+router.get('/patients', patientsGet)
+
+router.get('/specialty', specialtyGet )
 
 export default router
