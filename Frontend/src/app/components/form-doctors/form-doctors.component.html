@@ -1,0 +1,21 @@
+<div>
+    <form (submit) = "saveInformationDoctors()">
+        <h1>Formulario Doctores</h1>
+        <input type="text" placeholder="Ingrese Nombre" [(ngModel)]="formData.name" name="name">
+        <input type="text" placeholder="Ingrese Apellido" [(ngModel)]="formData.lastname" name="lastname">
+        <select [(ngModel)]="formData.specialty" name="specialty">
+            <option disabled selected value="">Selecciona una opción...</option>
+            <option value="Medicina General">Medicina General</option>
+            <option value="Cardiología">Cardiología</option>
+            <option value="Medicina Interna">Medicina Interna</option>
+            <option value="Dermatología">Dermatología</option>
+            <option value="Rehabilitación Física">Rehabilitación Fisica</option>
+            <option value="Psicología">Psicología</option>
+            <option value="Psicología">Odontología</option>
+            <option value="Radiología">Radiología</option>
+        </select>
+        <input type="number" placeholder="Ingrese Consultorio" [(ngModel)]="formData.office" name="office">
+        <input type="email" placeholder="Ingrese E-mail de Contacto" [(ngModel)]="formData.email" name="email">
+        <button type="submit">Enviar</button>
+    </form>
+</div>

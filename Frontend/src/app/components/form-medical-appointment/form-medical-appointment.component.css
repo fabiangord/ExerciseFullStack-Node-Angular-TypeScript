@@ -1,0 +1,50 @@
+div{
+    background-color: lightslategray;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin-left: 29.6%;
+    margin-top: 5vh;
+    padding: 5vh 0vw;
+    border-radius: 3vw;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+}
+
+h1{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input{
+    margin: 0.5vh 0vw;
+    width: 100%;
+    border-radius: 5vw;
+    border-width: 0.2vw;
+}
+
+input::placeholder{
+    padding-left: 1vw;
+}
+
+select{
+    width: 100%;
+    border-radius: 5vw;
+    padding-left: 1vw;
+    font-weight: lighter;
+    margin: 0.5vh 0vw;
+}
+
+button{
+    background-color: darkcyan;
+    margin: 0.5vh 0vw;
+    width: 50%;
+    border-radius: 1vw;
+    padding: 1vh 0vw;
+}

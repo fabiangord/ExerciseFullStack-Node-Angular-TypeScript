@@ -1,0 +1,11 @@
+<div>
+    <form (submit)="saveInformationPatients()">
+        <h1>Formulario Pacientes</h1>
+        <input type="text" placeholder="Ingrese Nombre" [(ngModel)]="formDataPatients.name" name="name">
+        <input type="text" placeholder="Ingrese Apellido" [(ngModel)]="formDataPatients.lastname" name="lastname">
+        <input type="text" placeholder="Ingrese N° Cedula" [(ngModel)]="formDataPatients.documentNumber" name="documentNumber">
+        <input type="number" placeholder="Ingrese Edad" [(ngModel)]="formDataPatients.age" name="age">
+        <input type="text" placeholder="Ingrese Telefono" [(ngModel)]="formDataPatients.phone" name="phone">
+        <button type="submit">Enviar</button>
+    </form>
+</div>
