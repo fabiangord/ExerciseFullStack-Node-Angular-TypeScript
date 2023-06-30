@@ -1,0 +1,17 @@
+div{
+    background-color: lightslategray;
+    width: 40%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin-left: 29.6%;
+    margin-top: 5vh;
+    padding: 5vh 0vw;
+    border-radius: 3vw;
+}
+
+h1{
+    font-size: 20px;
+    margin-bottom: 2vh;
+    font-weight: bold;
+}
