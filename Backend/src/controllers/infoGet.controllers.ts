@@ -38,9 +38,9 @@ export const specialtyGet = async (req: Request, res: Response) => {
   const specialty= req.query.specialty as string 
   try {
 
-    const doctores = await modelDoctors.find({specialty})
-    console.log(doctores)
-    res.json(doctores);
+    const doctors = await modelDoctors.find({specialty})
+    
+    res.json(doctors);
   } catch (error) {
     console.error('Error al obtener los doctores por especialidad desde MongoDB:', error);
     res.status(500).json({ error: 'Error al obtener los doctores por especialidad' });
