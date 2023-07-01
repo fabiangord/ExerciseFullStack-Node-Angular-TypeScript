@@ -1,4 +1,4 @@
-### Aplicacion FULL STACK CITAS MEDICAS 
+## Aplicacion FULL STACK CITAS MEDICAS 
 
 Se realiza aplicación full stack que permite crear doctores y pacientes y de acuerdo a ello generar citas medicas
 
@@ -8,7 +8,7 @@ La aplicación se realizó con:
     Backend: NodeJS, ExpressJS, Typescript
     Database: MongoDB
 
-### Servidor de desarrollo
+## Servidor de desarrollo
 
 Para ejecutar la aplicación en el local recuerde en primer lugar instalar NodeJS y MongoDB, luego clone el repositorio, dentro de el encontrará varias carpetas, para ejecutar la aplicación:
 
@@ -18,12 +18,12 @@ Para ejecutar la aplicación en el local recuerde en primer lugar instalar NodeJ
      4.Crear tu archivo .env para variables de entorno
      5.Ya con los pasos anteriores, abrir la consola y ejecutar el comando: 
 
-## npm run dev
+# npm run dev
 
 Luego de esto, alternamente, abrir tu carpeta Frontend
 
     1.Ejecutar comando:
-## npm install
+# npm install
     2.Abrir la consola y ejecutar ng serve -o
 
 De esta manera nuestra aplicación está conectada a nuestro backend y funcionaría correctamente
