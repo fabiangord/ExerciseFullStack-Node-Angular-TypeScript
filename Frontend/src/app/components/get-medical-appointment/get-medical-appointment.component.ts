@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiServicesService } from 'src/app/services/api-services.service';
 import { FormDataMedicalAppointmentInterface } from 'src/app/types/types';
 
@@ -7,11 +7,15 @@ import { FormDataMedicalAppointmentInterface } from 'src/app/types/types';
   templateUrl: './get-medical-appointment.component.html',
   styleUrls: ['./get-medical-appointment.component.css']
 })
-export class GetMedicalAppointmentComponent {
+export class GetMedicalAppointmentComponent implements OnInit{
 
   dataPatient!: FormDataMedicalAppointmentInterface[]
 
   constructor(private apiService: ApiServicesService){}
+
+  ngOnInit(): void {
+    this.getInfoPatients()
+  }
 
   getInfoPatients(){
     this.apiService.getInfo('medicalAppointment')
