@@ -16,14 +16,11 @@ Para ejecutar la aplicación en el local recuerde en primer lugar instalar NodeJ
      2.Entrar a la carpeta Backend
      3.Conectar tu base de datos
      4.Crear tu archivo .env para variables de entorno
-     5.Ya con los pasos anteriores, abrir la consola y ejecutar el comando: 
-
-# npm run dev
+     5.Ya con los pasos anteriores, abrir la consola y ejecutar el comando npm run dev
 
 Luego de esto, alternamente, abrir tu carpeta Frontend
 
-    1.Ejecutar comando:
-# npm install
+    1.Ejecutar comando npm install
     2.Abrir la consola y ejecutar ng serve -o
 
 De esta manera nuestra aplicación está conectada a nuestro backend y funcionaría correctamente
