@@ -5,6 +5,11 @@ const isString = (string: any): boolean => {
   return typeof string === 'string'
 }
 
+const isStringNet = (string: any): boolean => {
+  const validString = /^[A-Z]+$/i
+  return validString.test(string)
+}
+
 const isSpecialty = (specialtyFromRequest: any): boolean => {
   return Object.values(SpecialtyType).includes(specialtyFromRequest)
 }
@@ -16,6 +21,15 @@ const isEmail = (email: any): boolean => {
 
 const isNumber = (number: any): boolean => {
   return typeof number === 'number'
+}
+
+const parsedString = (stringFromRequest:any ):string =>{
+  if(!isStringNet(stringFromRequest)){
+    throw new Error
+  }
+
+  return stringFromRequest
+
 }
 
 const parsedInfo = (infoFromRequest: any): string => {
@@ -60,8 +74,8 @@ export const parsedError = (error:any) => {
 
 export const createDoctor = (object: any): NewDoctorType => {
   const newDoctor: NewDoctorType = {
-    name: parsedInfo(object.name),
-    lastname: parsedInfo(object.lastname),
+    name: parsedString(object.name),
+    lastname: parsedString(object.lastname),
     specialty: parsedSpecialty(object.specialty),
     office: parsedNumber(object.office),
     email: parsedEmail(object.email)
@@ -71,8 +85,8 @@ export const createDoctor = (object: any): NewDoctorType => {
 
 export const createPatient = (object: any): NewPatientType => {
   const newPatient: NewPatientType = {
-    name: parsedInfo(object.name),
-    lastname: parsedInfo(object.lastname),
+    name: parsedString(object.name),
+    lastname: parsedString(object.lastname),
     documentNumber: parsedInfo(object.documentNumber),
     age: parsedNumber(object.age),
     phone: parsedInfo(object.phone)
@@ -85,8 +99,8 @@ export const createMedicalAppointment = (object: any): NewMedicalAppointmentType
   const newMedicalAppointment: NewMedicalAppointmentType = {
     documentNumberPatient: parsedInfo(object.documentNumberPatient),
     specialty: parsedSpecialty(object.specialty),
-    doctorName: parsedInfo(object.doctorName),
-    patientName: parsedInfo(object.patientName)
+    doctorName: parsedString(object.doctorName),
+    patientName: parsedString(object.patientName)
   }
 
   return newMedicalAppointment
