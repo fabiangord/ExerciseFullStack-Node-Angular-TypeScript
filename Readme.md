@@ -15,9 +15,7 @@ Para ejecutar la aplicación en el local recuerde en primer lugar instalar NodeJ
      1.Primero iniciar servicio de MongoDB
      2.Entrar a la carpeta Backend
      3.Conectar tu base de datos
-     4.Crear tu archivo .env para variables de entorno:
-         ![image](https://github.com/fabiangord/ExerciseFullStack-Node-Angular-TypeScript/assets/111689677/bc9cd8e8-447d-4d37-be2c-7d60db246650)
-
+     4.Crear tu archivo .env para variables de entorno
      5.Ya con los pasos anteriores, abrir la consola y ejecutar el comando npm run dev
 
 Luego de esto, alternamente, abrir tu carpeta Frontend
