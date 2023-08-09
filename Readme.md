@@ -1,6 +1,6 @@
 ## Aplicacion FULL STACK CITAS MEDICAS 
 
-Se realiza aplicación full stack que permite crear doctores y pacientes y de acuerdo a ello generar citas medicas
+Se realiza aplicación full stack que permite crear doctores y pacientes y de acuerdo a ello generar citas medicas.
 
 La aplicación se realizó con:
 
